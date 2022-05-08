@@ -35,7 +35,7 @@ def test_luis_REST_APIs(query):
 		appId = "fe2ea595-12f7-494c-8737-bc881341be54" #"af053a5d-6c77-4755-90a2-590d1044c0e6"
 		predictionKey = "5fc4ccbb7dc04aa094934613afb5f55f"
 		predictionEndpoint = "https://p10luisresource.cognitiveservices.azure.com/"
-$		headers = {'Ocp-Apim-Subscription-Key':predictionKey }#predictionKey
+		headers = {'Ocp-Apim-Subscription-Key':predictionKey }#predictionKey
 		app_version = "v3.0"
 		# The URL parameters to use in this REST call.
 		params ={
