@@ -18,7 +18,7 @@ import requests
 import http.client, urllib.request, urllib.parse, urllib.error, base64
 
 
-from test_evaluation import test_luis_REST_APIs 
+from performance import test_luis_REST_APIs 
 
 def test_luis_prediction_bookflight():
     query ="travel on 30/03/2022 and return on 30/04/2022 from Paris to Maldives with 5000£ "
