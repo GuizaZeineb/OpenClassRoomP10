@@ -26,4 +26,5 @@ jobs:
     - name: Test with pytest
       run: |
         export PYTHONPATH=OpenClassRoomP10
+        pytest --fixtures [testpath]
         pytest test_luis.py
