@@ -27,7 +27,7 @@ def load_file(file_name):
     return file
 
 
-def test_luis_REST_APIs(query):
+def test_luis_REST_APIs(requete):
 	#
 	# This quickstart shows how to add utterances to a LUIS model using the REST APIs.
 	#
@@ -46,7 +46,7 @@ def test_luis_REST_APIs(query):
 			#'staging': 'false'
 		}
 #		predictionRequest = { "query" : " Book a flight from Paris to New-York on March 18, 2022" }
-		predictionRequest = { "query" : query }
+		predictionRequest = { "query" : requete }
 
 		# Make the REST call to initiate a training session.
 
