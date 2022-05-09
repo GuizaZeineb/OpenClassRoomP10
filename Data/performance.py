@@ -27,7 +27,7 @@ def load_file(file_name):
         file = json.load(json_file)
     return file
 
-@pytest.fixture
+# @pytest.fixture
 def test_luis_REST_APIs(query):
 	#
 	# This quickstart shows how to add utterances to a LUIS model using the REST APIs.
