@@ -50,7 +50,7 @@ def test_luis_REST_APIs(query):
 
 		# Make the REST call to initiate a training session.
 
-		predictionResponse = requests.post(f'{CONFIG.predictionEndpoint}luis/prediction/v3.0/apps/{appId}/slots/production/predict', 
+		predictionResponse = requests.post(f'{predictionEndpoint}luis/prediction/v3.0/apps/{appId}/slots/production/predict', 
 headers=headers, params=params, data= json.dumps(predictionRequest))	
 
 		# Display the results on the console.
