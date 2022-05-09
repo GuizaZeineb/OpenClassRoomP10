@@ -26,8 +26,8 @@ def load_file(file_name):
         file = json.load(json_file)
     return file
 
-
-def test_luis_REST_APIs(utterance):
+@pytest.fixture
+def test_luis_REST_APIs(query):
 	#
 	# This quickstart shows how to add utterances to a LUIS model using the REST APIs.
 	#
@@ -46,7 +46,7 @@ def test_luis_REST_APIs(utterance):
 			#'staging': 'false'
 		}
 #		predictionRequest = { "query" : " Book a flight from Paris to New-York on March 18, 2022" }
-		predictionRequest = { "query" : utterance }
+		predictionRequest = { "query" : query }
 
 		# Make the REST call to initiate a training session.
 
