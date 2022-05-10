@@ -1,0 +1,108 @@
+[
+    {"text": "I'd like to book a trip to Atlantis from Caprica on Saturday, August 13, 2016 for 8 adults. I have a tight budget of 1700.",
+     "intent": "BookFlight", 
+     "entities": 
+     [{"startPos": 41, "endPos": 47, "entity": "Departure"}, 
+        {"startPos": 27, "endPos": 34, "entity": "Destination"}, 
+        {"startPos": 52, "endPos": 76,  "entity": "DepartureDate"}, 
+        {"startPos": 117, "endPos": 120, "entity": "Budget"}]}, 
+        
+    {"text": "Hello, I am looking to book a vacation from Gotham City to Mos Eisley for $2100.", 
+     "intent": "BookFlight", 
+     "entities": 
+     [{"startPos": 44, "endPos": 54, "entity": "Departure"}, 
+        {"startPos": 59, "endPos": 68, "entity": "Destination"}, 
+        {"startPos": 75, "endPos": 78, "entity": "Budget"}]}, 
+        
+    {"text": "Hello there i am looking to go on a vacation with my family to Gotham City, can you help me?", 
+        "intent": "BookFlight", "entities": [{"startPos": 63, "endPos": 73, "entity": "Destination"}]}, 
+        
+    {"text": "Hi I'd like to go to Caprica from Busan, between Sunday August 21, 2016 and Wednesday August 31, 2016", 
+        "intent": "BookFlight", 
+        "entities": [{"startPos": 34, "endPos": 38, "entity": "Departure"},
+             {"startPos": 21, "endPos": 27, "entity": "Destination"}, 
+             {"startPos": 49, "endPos": 70, "entity": "DepartureDate"}, 
+             {"startPos": 76, "endPos": 100, "entity": "ArrivalDate"}]}, 
+             
+    {"text": "Hello, I am looking to book a trip for 2 adults and 6 children for $21,300 or less. We are departing from Kochi for Denver.", 
+        "intent": "BookFlight", 
+        "entities": 
+        [{"startPos": 106, "endPos": 110, "entity": "Departure"}, 
+         {"startPos": 116, "endPos": 121, "entity": "Destination"},
+          {"startPos": 67, "endPos": 73, "entity": "Budget"}]}, 
+          
+          
+    {"text": "Hey, i Want to go to St. Louis on the 17th of August", 
+        "intent": "BookFlight", 
+        "entities": 
+        [{"startPos": 21, "endPos": 29, "entity": "Destination"}, 
+        {"startPos": 38, "endPos": 51, "entity": "DepartureDate"}]}, 
+        
+    {"text": "I'm looking for a trip to Gotham City leaving from Kakariko Village on Saturday, August 13, 2016. 3 adults for no more than $2400 USD.", 
+        "intent": "BookFlight", "entities": [{"startPos": 51, "endPos": 66, "entity": "Departure"}, 
+            {"startPos": 26, "endPos": 36, "entity": "Destination"}, 
+            {"startPos": 71, "endPos": 95, "entity": "DepartureDate"}, 
+            {"startPos": 124, "endPos": 132, "entity": "Budget"}]}, 
+            
+    {"text": "Hello, I would like to book a 2-week trip leaving from Melbourne on August 27. I would like to go to Mannheim.", 
+        "intent": "BookFlight", 
+        "entities": 
+        [{"startPos": 55, "endPos": 63, "entity": "Departure"}, 
+            {"startPos": 101, "endPos": 108, "entity": "Destination"}, 
+            {"startPos": 68, "endPos": 76, "entity": "DepartureDate"}]}, 
+
+    {"text": "Hello, I am planning to book a trip to pittsborgh", "intent": "BookFlight", 
+        "entities": [{"startPos": 39, "endPos": 48, "entity": "Destination"}]}, 
+    
+    {"text": "Hi, I need to go to Mos Eisley for a wedding, leaving on Saturday, August 13, 2016 and returning on Tuesday, August 16, 2016. Preferably for $3700.", 
+        "intent": "BookFlight", 
+        "entities": 
+        [{"startPos": 20, "endPos": 29, "entity": "Destination"}, 
+            {"startPos": 57, "endPos": 81, "entity": "DepartureDate"}, 
+            {"startPos": 100, "endPos": 123, "entity": "ArrivalDate"}, 
+            {"startPos": 141, "endPos": 145, "entity": "Budget"}]}, 
+            
+    {"text": "I'd like to get away from Monday, August 15, 2016 to Wednesday, August 31, 2016. My budget is $3200 and I would leave from Detroit.", 
+        "intent": "BookFlight", "entities": [{"startPos": 123, "endPos": 129, "entity": "Departure"}, 
+            {"startPos": 26, "endPos": 48, "entity": "DepartureDate"}, 
+            {"startPos": 53, "endPos": 78, "entity": "ArrivalDate"}, 
+            {"startPos": 94, "endPos": 98, "entity": "Budget"}]}, 
+            
+    {"text": "Good day, please book me a trip from Vancouver, Jamaica to Recife. I would like to leave for 17 days on August 24.", 
+        "intent": "BookFlight", "entities": [{"startPos": 37, "endPos": 54, "entity": "Departure"}, 
+            {"startPos": 59, "endPos": 64, "entity": "Destination"}, 
+            {"startPos": 104, "endPos": 112, "entity": "DepartureDate"}]}, 
+            
+    {"text": "Hi im looking for a nice destination that i could go to from Columbus", "intent": "BookFlight", 
+        "entities": [{"startPos": 61, "endPos": 68, "entity": "Departure"}]}, 
+    
+    {"text": "Hi, I have a big family and we can't afford a big vacation, we want to go to Atlantis from Mos Eisley for $3600 at most.", 
+        "intent": "BookFlight", "entities": [{"startPos": 91, "endPos": 100, "entity": "Departure"}, 
+            {"startPos": 77, "endPos": 84, "entity": "Destination"}, 
+            {"startPos": 106, "endPos": 110, "entity": "Budget"}]}, 
+            
+    {"text": "Hi, I'm leaving from Diagon Alley and going to Coruscant on a budget of $3400. The dates don't matter, but I cannot afford anything over my budget.", 
+        "intent": "BookFlight", "entities": [{"startPos": 21, "endPos": 32, "entity": "Departure"}, 
+        {"startPos": 47, "endPos": 55, "entity": "Destination"}, 
+        {"startPos": 72, "endPos": 76, "entity": "Budget"}]}, 
+        
+    {"text": "Hi there, im from Vitoria and I want to go on vacation", "intent": "BookFlight", 
+        "entities": [{"startPos": 18, "endPos": 24, "entity": "Departure"}]}, 
+        
+    {"text": "Hi, me and my family want to take a trip to Kakariko Village.", "intent": "BookFlight", 
+        "entities": [{"startPos": 44, "endPos": 59, "entity": "Destination"}]}, 
+        
+    {"text": "Hi, I'm looking for a trip  from Thursday, August 18, 2016 to Thursday, September 8, 2016 to Mexico City", 
+        "intent": "BookFlight", "entities": [{"startPos": 93, "endPos": 103, "entity": "Destination"}, 
+            {"startPos": 33, "endPos": 57, "entity": "DepartureDate"}, 
+            {"startPos": 62, "endPos": 88, "entity": "ArrivalDate"}]},
+    
+    {"text": "Hi im from Caprica looking to book a vacation to Hyrule", "intent": "BookFlight", 
+        "entities": [{"startPos": 11, "endPos": 17, "entity": "Departure"}, 
+            {"startPos": 49, "endPos": 54, "entity": "Destination"}]}, 
+            
+    {"text": "Hey man, imma leave from Godric's Hollow on August 27, 2016 and go to Goiania. Can't pay more than 4300USD. Watcha got?", 
+    "intent": "BookFlight", "entities": [{"startPos": 25, "endPos": 39, "entity": "Departure"}, 
+        {"startPos": 70, "endPos": 76, "entity": "Destination"}, 
+        {"startPos": 44, "endPos": 58, "entity": "DepartureDate"}, 
+        {"startPos": 99, "endPos": 105, "entity": "Budget"}]}]
