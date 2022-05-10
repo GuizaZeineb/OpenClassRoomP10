@@ -4,7 +4,6 @@ import os
 import json
 import re
 import numpy as np
-import pytest
 import time
 
 
@@ -20,6 +19,9 @@ import numpy as np
 import json, time, uuid
 import requests
 import http.client, urllib.request, urllib.parse, urllib.error, base64
+#from app import CONFIG
+
+from config import DefaultConfig
 
 
 def load_file(file_name):
@@ -28,16 +30,14 @@ def load_file(file_name):
         file = json.load(json_file)
     return file
 
-# @pytest.fixture
-def test_luis_REST_APIs(query):
+
+def test_luis_REST_APIs(query, CONFIG):
 	#
 	# This quickstart shows how to add utterances to a LUIS model using the REST APIs.
 	#
 	try:
-		appId = "fe2ea595-12f7-494c-8737-bc881341be54" #"af053a5d-6c77-4755-90a2-590d1044c0e6"
-		predictionKey = "5fc4ccbb7dc04aa094934613afb5f55f"
-		predictionEndpoint = "https://p10luisresource.cognitiveservices.azure.com/"
-		headers = {'Ocp-Apim-Subscription-Key':predictionKey }#predictionKey
+		#data = get_examples("../data/train.json")	
+		headers = {'Ocp-Apim-Subscription-Key':CONFIG.PREDICTION_KEY }#predictionKey
 		app_version = "v3.0"
 		# The URL parameters to use in this REST call.
 		params ={
@@ -52,7 +52,7 @@ def test_luis_REST_APIs(query):
 
 		# Make the REST call to initiate a training session.
 
-		predictionResponse = requests.post(f'{predictionEndpoint}luis/prediction/v3.0/apps/{appId}/slots/production/predict', 
+		predictionResponse = requests.post(f'{CONFIG.PREDICTION_ENDPOINT}luis/prediction/v3.0/apps/{CONFIG.LUIS_APP_ID}/slots/production/predict', 
 headers=headers, params=params, data= json.dumps(predictionRequest))	
 
 		# Display the results on the console.
@@ -65,7 +65,7 @@ headers=headers, params=params, data= json.dumps(predictionRequest))
 
 
 
-def extract_performance(data):
+def extract_performance(data, CONFIG):
 
     performance = []
     accuracy =[]
@@ -102,8 +102,8 @@ def extract_performance(data):
                 
 
         #_________________Intent & Entities Extraction after Prediction
-	time.slepp(5)
-        reply = test_luis_REST_APIs(query)
+        time.sleep(3)
+        reply = test_luis_REST_APIs( query, CONFIG)
         try :
             #prediction_topIntent = reply["prediction"]["topIntent"]
             prediction_entities = reply["prediction"]["entities"]
@@ -132,6 +132,8 @@ def extract_performance(data):
     
                 if "money" in prediction_entities["$instance"]:
                     prediction_Budget = prediction_entities["$instance"]["money"][0]['text'] 
+            
+#            print(" prediction vs test Arrival Date : ", prediction_Arrival_date, " ",test_Arrival_date)
             #--------Calcul d'accuracy à chaque utterance_____#
             # Top Intent| Departure| Destination \ Departure Date \ Arrival Date \ Budget
             Intent, Departure, Destination, Departure_Date, Arrival_Date , Budget = 0,0,0,0,0,0
@@ -165,6 +167,10 @@ def extract_performance(data):
 
     return performance
 
+
+
+
+
 def save_performance(performance):
     performance_array = np.array(performance)
 
@@ -192,7 +198,7 @@ def main():
     data = load_file("test_final_20.json")
 
     # Config : Luis Credentials
-    #CONFIG = DefaultConfig()
+    CONFIG = DefaultConfig()
 
     # appId = "fe2ea595-12f7-494c-8737-bc881341be54" #"af053a5d-6c77-4755-90a2-590d1044c0e6"
     # predictionKey = "5fc4ccbb7dc04aa094934613afb5f55f"
@@ -200,7 +206,8 @@ def main():
 
     # Calculate the accuracy performance
     print("##############\nCalculate Luis Performance")
-    performance = extract_performance(data)
+#    performance = extract_performance2(data)
+    performance = extract_performance(data, CONFIG)
 
     # Print the accurace Performance
     print("\nAccuracy Top Intent ", performance[0], "%","\nAccuracy Departure ", performance[1], "%",
