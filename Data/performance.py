@@ -5,6 +5,7 @@ import json
 import re
 import numpy as np
 import pytest
+import time
 
 
 
@@ -101,6 +102,7 @@ def extract_performance(data):
                 
 
         #_________________Intent & Entities Extraction after Prediction
+	time.slepp(5)
         reply = test_luis_REST_APIs(query)
         try :
             #prediction_topIntent = reply["prediction"]["topIntent"]
@@ -141,7 +143,8 @@ def extract_performance(data):
                 Destination=1
             if prediction_Departure_date == test_Departure_date and prediction_Departure_date!=None:
                 Departure_Date=1
-            if prediction_Arrival_date == test_Arrival_date and prediction_Arrival_date!=None:
+#            if prediction_Arrival_date == test_Arrival_date and prediction_Arrival_date!=None:
+            if test_Arrival_date.lower().find( prediction_Arrival_date.lower()) !=-1 :
                 Arrival_Date=1
     #        if prediction_Budget == test_Budget and prediction_Budget!=None:
             if prediction_Budget!=None and prediction_Budget.find(test_Budget) !=-1 :
